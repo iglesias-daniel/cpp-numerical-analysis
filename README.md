@@ -2,8 +2,6 @@
 
 A modular numerical analysis library written in C with C++ compativility.
 
----
-
 ## 🚀 Features
 
 - Numerical analysis functions
@@ -14,6 +12,7 @@ A modular numerical analysis library written in C with C++ compativility.
 
 ## 📁 Project Structure
 
+```bash
 cpp-numerical-analysis/
 ├── include/         # Public headers (.h)
 ├── src/             # Function implementations (.c)
@@ -23,6 +22,7 @@ cpp-numerical-analysis/
 ├── LICENSE          # MIT License
 ├── Makefile         # Build automation
 └── README.md        # Project overview
+```
 
 ## ⚙️ Building the project
 
@@ -48,7 +48,7 @@ I'm working on it 🧐
 
 ## 🧩 Implemented Modules
 
-[x] Absolute error
+- Absolute error
 
 ## 🧪 Testing
 
