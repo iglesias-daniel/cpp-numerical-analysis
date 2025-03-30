@@ -29,14 +29,14 @@ cpp-numerical-analysis/
 Make sure you have `make`, `gcc`, and `g++` installed.
 
 ```bash
-# Compile C and C++ tests
-make
+# Compile C test
+make test NAME=test_name
+
+# Compile C++ test
+make testcpp NAME=test_name
 
 # Run C test
-make run_c
-
-# Run C++ test
-make run_cpp
+make run NAME=test_name
 
 # Clean compiled files
 make clean
@@ -49,6 +49,8 @@ I'm working on it 🧐
 ## 🧩 Implemented Modules
 
 - Absolute error
+- Relative error
+- Bisection method
 
 ## 🧪 Testing
 
