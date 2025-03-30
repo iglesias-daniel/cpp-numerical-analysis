@@ -1,0 +1,24 @@
+# === Compiled binaries ===
+bin/
+*.o
+*.out
+*.exe
+
+# === Build files ===
+*.log
+*.obj
+*.map
+*.a
+*.so
+*.dll
+
+# === Doxygen output ===
+html/
+latex/
+
+# === Editor settings ===
+.vscode/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
