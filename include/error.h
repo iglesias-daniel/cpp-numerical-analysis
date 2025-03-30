@@ -8,11 +8,20 @@ extern "C" {
 /**
  * @brief gets the absolute error between two double.
  * 
- * @param aprox Aproximated value
+ * @param approx Aproximated value
  * @param real Real value
  * @return double Absolute error
  */
 double absolute_error(double approx, double real);
+
+/**
+ * @brief gets the relative error between two double.
+ * 
+ * @param approx Aproximated value
+ * @param real Real value
+ * @return double Relative error
+ */
+double relative_error(double approx, double real);
 
 #ifdef __cplusplus
 }

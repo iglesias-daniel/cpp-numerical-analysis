@@ -1,7 +1,7 @@
 CC = gcc
 CXX = g++
-CFLAGS = -Iinclude -Wall -std=c11
-CXXGLAGS = -Iinclude -Wall -std=c++17
+CFLAGS = -Iinclude -Wall -std=c11 -DLOGGING_ENABLED
+CXXFLAGS = -Iinclude -Wall -std=c++17 -DLOGGING_ENABLED
 
 all: test_c test_cpp
 
