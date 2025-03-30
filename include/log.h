@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 #ifdef LOGGING_ENABLED
-    #define LOG_ERROR(msg, ...) fprintf(stderr, "[ERROR] " msg "\n", ##__VA_ARGS__);
+    #define LOG_ERROR(msg, ...) fprintf(stderr, "[ERROR] " msg "\n", ##__VA_ARGS__)
 #else
     #define LOG_ERROR(msg, ...) // Logging disabled
 #endif

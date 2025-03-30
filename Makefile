@@ -3,19 +3,43 @@ CXX = g++
 CFLAGS = -Iinclude -Wall -std=c11 -DLOGGING_ENABLED
 CXXFLAGS = -Iinclude -Wall -std=c++17 -DLOGGING_ENABLED
 
-all: test_c test_cpp
+BIN_DIR = bin
+SRC_DIR = src
+TEST_DIR = test
 
-test_c: src/error.c test/test_error.c
-	$(CC) $(CFLAGS) -o bin/test_error_c src/error.c test/test_error.c
+# === Sources comunes ===
+SRCS = $(SRC_DIR)/error.c $(SRC_DIR)/root_finding.c
 
-test_cpp: src/error.c test/test_error_cpp.cpp
-	$(CXX) $(CXXFLAGS) -o bin/test_error_cpp src/error.c test/test_error_cpp.cpp
+.PHONY: test testcpp run clean
 
-run_c:
-	./bin/test_error_c
+# === Test en C ===
+test:
+ifndef NAME
+	$(error You must specify NAME=<test_name>)
+endif
+	$(CC) $(CFLAGS) -o $(BIN_DIR)/test_$(NAME) $(SRCS) $(TEST_DIR)/test_$(NAME).c
 
-run_cpp:
-	./bin/test_error_cpp
+# === Test en C++ ===
+testcpp:
+ifndef NAME
+	$(error You must specify NAME=<test_name>)
+endif
+	$(CXX) $(CXXFLAGS) -o $(BIN_DIR)/test_$(NAME)_cpp $(SRCS) $(TEST_DIR)/test_$(NAME)_cpp.cpp
 
+# === Run cualquier test ===
+run:
+ifndef NAME
+	$(error You must specify NAME=<test_name>)
+endif
+	@echo "Running test: $(NAME)"
+	@if [ -f $(BIN_DIR)/test_$(NAME) ]; then \
+		./$(BIN_DIR)/test_$(NAME); \
+	elif [ -f $(BIN_DIR)/test_$(NAME)_cpp ]; then \
+		./$(BIN_DIR)/test_$(NAME)_cpp; \
+	else \
+		echo "No compiled test found for $(NAME)"; \
+	fi
+
+# === Clean ===
 clean:
-	rm -f bin/test_error_c bin/test_error_cpp
+	rm -f $(BIN_DIR)/test_*

@@ -1,6 +1,6 @@
 # C/C++ Numerical Analysis Library
 
-A modular numerical analysis library written in C with C++ compativility.
+A modular numerical analysis library written in C with C++ compatibility.
 
 ## 🚀 Features
 
